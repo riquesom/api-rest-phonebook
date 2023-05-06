@@ -19,12 +19,22 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import Database from '@ioc:Adonis/Lucid/Database'
+import Application from '@ioc:Adonis/Core/Application'
+import Migrator from '@ioc:Adonis/Lucid/Migrator'
 
 Route.get('/', async () => {
+  const migrator = new Migrator(Database, Application, {
+    direction: 'up',
+    dryRun: false,
+    // connectionName: 'pg',
+  })
+
+  await migrator.run()
   return { hello: 'world' }
 })
 
-Route.group(() => {
+Route.group(async () => {
   Route.post('/', 'ContactsController.create')
   Route.get('/', 'ContactsController.list')
   Route.get('/:id', 'ContactsController.show')

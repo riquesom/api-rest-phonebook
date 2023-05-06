@@ -2,7 +2,7 @@ import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
 import Contact from 'App/Models/Contact'
 import ContactPhone from 'App/Models/ContactPhone'
 
-export default class extends BaseSeeder {
+export default class ContactSeeder extends BaseSeeder {
   public async run() {
     const contacts = await Contact.createMany([
       {
