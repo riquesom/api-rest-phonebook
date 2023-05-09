@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "3b5aaad3-729f-49af-952d-6e56a83bd46f",
+		"name": "API PHONEBOOK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4621129"
+	},
+	"item": [
+		{
+			"name": "List Contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/contacts?page=1",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "ane",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "@gma",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "10035",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "7893",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Contact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/contacts/3",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"contacts",
+						"3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ane",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "@gma",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "10035",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "7893",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Henrique Oliveiraa\",\r\n    \"email\": \"henrique_som@icloud.com\",\r\n    \"address\": \"Rua alessio santini, 260 - Torre 3 Bloco F Apt 4\",\r\n    \"phones\": [\r\n        {\r\n            \"id\": \"5\",\r\n            \"number\": \"1656565656\"\r\n        },\r\n        {\r\n            \"id\": \"11\",\r\n            \"number\": \"4124124000\"\r\n        },\r\n        {\r\n            \"number\": \"66666666666\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/contacts/3",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"contacts",
+						"3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ane",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "@gma",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "10035",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "7893",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dekete Contact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/contacts/4",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"contacts",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ane",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "@gma",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "10035",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "7893",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Henrique Oliveira\",\r\n    \"email\": \"henrique_som@icloud.com\",\r\n    \"address\": \"Rua Alessio Santini, 260 - Torre 3 Bloco F Apt 4\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": \"16997563009\"\r\n        },\r\n        {\r\n            \"number\": \"16997949692\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/contacts",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://127.0.0.1:3333",
+			"type": "string"
+		}
+	]
+}
